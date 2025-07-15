@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Calculator</title>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+  <div class="calculator" id="calculator">
+    <div class="header">
+      <div class="title">Calculator</div>
+      <button class="mode-toggle" onclick="toggleMode()" id="modeToggle">Scientific</button>
+    </div>
+    
+    <div class="history" id="history"></div>
+    <div class="display" id="display">0</div>
+    
+    <div class="buttons" id="buttons">
+      <!-- Scientific Mode Extra Functions -->
+      <div class="scientific-extra" id="scientificExtra">
+        <button class="btn function" onclick="memoryStore()">MS</button>
+        <button class="btn function" onclick="memoryRecall()">MR</button>
+        <button class="btn function" onclick="memoryClear()">MC</button>
+        <button class="btn function" onclick="appendOperator('(')">(</button>
+        <button class="btn function" onclick="appendOperator(')')">)</button>
+        <button class="btn function" onclick="appendFunction('abs(')">|x|</button>
+        <button class="btn function" onclick="appendFunction('pow(')">x²</button>
+      </div>
+
+      <!-- Scientific Functions Panel -->
+      <div class="scientific-panel" id="scientificPanel">
+        <button class="btn function" onclick="appendFunction('sin(')">sin</button>
+        <button class="btn function" onclick="appendFunction('cos(')">cos</button>
+        <button class="btn function" onclick="appendFunction('tan(')">tan</button>
+        <button class="btn function" onclick="appendFunction('log(')">log</button>
+        <button class="btn function" onclick="appendFunction('ln(')">ln</button>
+        <button class="btn function" onclick="appendOperator('^')">x^y</button>
+        <button class="btn function" onclick="appendFunction('sqrt(')">√</button>
+        
+        <button class="btn function" onclick="appendFunction('asin(')">asin</button>
+        <button class="btn function" onclick="appendFunction('acos(')">acos</button>
+        <button class="btn function" onclick="appendFunction('atan(')">atan</button>
+        <button class="btn function" onclick="appendConstant('PI')">π</button>
+        <button class="btn function" onclick="appendConstant('E')">e</button>
+        <button class="btn function" onclick="appendFunction('factorial(')">n!</button>
+        <button class="btn function" onclick="appendOperator('%')">%</button>
+      </div>
+
+      <!-- Basic Calculator Layout -->
+      <div class="basic-buttons" id="basicButtons">
+        <button class="btn clear" onclick="clearAll()">AC</button>
+        <button class="btn clear" onclick="clearEntry()">CE</button>
+        <button class="btn operator" onclick="deleteLast()">←</button>
+        <button class="btn operator" onclick="appendOperator('/')">÷</button>
+
+        <button class="btn" onclick="appendNumber('7')">7</button>
+        <button class="btn" onclick="appendNumber('8')">8</button>
+        <button class="btn" onclick="appendNumber('9')">9</button>
+        <button class="btn operator" onclick="appendOperator('*')">×</button>
+
+        <button class="btn" onclick="appendNumber('4')">4</button>
+        <button class="btn" onclick="appendNumber('5')">5</button>
+        <button class="btn" onclick="appendNumber('6')">6</button>
+        <button class="btn operator" onclick="appendOperator('-')">−</button>
+
+        <button class="btn" onclick="appendNumber('1')">1</button>
+        <button class="btn" onclick="appendNumber('2')">2</button>
+        <button class="btn" onclick="appendNumber('3')">3</button>
+        <button class="btn operator" onclick="appendOperator('+')">+</button>
+
+        <button class="btn zero" onclick="appendNumber('0')">0</button>
+        <button class="btn" onclick="appendNumber('.')">.</button>
+        <button class="btn equal" onclick="calculateResult()" id="equalBtn">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
